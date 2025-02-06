@@ -9,21 +9,21 @@ document.addEventListener('DOMContentLoaded', () => {
 // Watch Data
 const watches = {
     CASIO: [
-        { color: 'Plateado fondo azul', price: 200, images: [1,2,3,4] },
-        { color: 'Plateado fondo negro', price: 200, images: [1,2,3,4] },
-        { color: 'Plateado fondo plata', price: 200, images: [1,2,3,4] },
-        { color: 'Negro fondo azul', price: 200, images: [1,2,3,4] },
-        { color: 'Negro fondo negro', price: 200, images: [1,2,3,4] },
-        { color: 'Negro fondo plata', price: 200, images: [1,2,3,4] },
-        { color: 'Dorado fondo azul', price: 200, images: [1,2,3,4] },
-        { color: 'Dorado fondo plata', price: 200, images: [1,2,3,4] },
-        { color: 'Dorado fondo dorado', price: 200, images: [1,2,3,4] }
+        { color: 'Plateado fondo azul', price: 200, images: ['plateadofondoazul1.jpg', 'plateadofondoazul2.jpg', 'plateadofondoazul3.jpg', 'plateadofondoazul4.jpg'] },
+        { color: 'Plateado fondo negro', price: 200, images: ['plateadofondonegro1.jpg', 'plateadofondonegro2.jpg', 'plateadofondonegro3.jpg', 'plateadofondonegro4.jpg'] },
+        { color: 'Plateado fondo plata', price: 200, images: ['plateadofondoplata1.jpg', 'plateadofondoplata2.jpg', 'plateadofondoplata3.jpg', 'plateadofondoplata4.jpg'] },
+        { color: 'Negro fondo azul', price: 200, images: ['negrofondoazul1.jpg', 'negrofondoazul2.jpg', 'negrofondoazul3.jpg', 'negrofondoazul4.jpg'] },
+        { color: 'Negro fondo negro', price: 200, images: ['negrofondonegro1.jpg', 'negrofondonegro2.jpg', 'negrofondonegro3.jpg', 'negrofondonegro4.jpg'] },
+        { color: 'Negro fondo plata', price: 200, images: ['negrofondoplata1.jpg', 'negrofondoplata2.jpg', 'negrofondoplata3.jpg', 'negrofondoplata4.jpg'] },
+        { color: 'Dorado fondo azul', price: 200, images: ['doradondoazul1.jpg', 'doradondoazul2.jpg', 'doradondoazul3.jpg', 'doradondoazul4.jpg'] },
+        { color: 'Dorado fondo plata', price: 200, images: ['doradondoplata1.jpg', 'doradondoplata2.jpg', 'doradondoplata3.jpg', 'doradondoplata4.jpg'] },
+        { color: 'Dorado fondo dorado', price: 200, images: ['doradondodorado1.jpg', 'doradondodorado2.jpg', 'doradondodorado3.jpg', 'doradondodorado4.jpg'] }
     ],
     UNISEX: [
-        { color: 'Dorado', price: 100, images: [1,2,3,4] },
-        { color: 'Rosa Gold', price: 100, images: [1,2,3,4] },
-        { color: 'Negro', price: 100, images: [1,2,3,4] },
-        { color: 'Plateado', price: 100, images: [1,2,3,4] }
+        { color: 'Dorado', price: 100, images: ['dorado1.jpg', 'dorado2.jpg', 'dorado3.jpg', 'dorado4.jpg'] },
+        { color: 'Rosa Gold', price: 100, images: ['rosagold1.jpg', 'rosagold2.jpg', 'rosagold3.jpg', 'rosagold4.jpg'] },
+        { color: 'Negro', price: 100, images: ['negro1.jpg', 'negro2.jpg', 'negro3.jpg', 'negro4.jpg'] },
+        { color: 'Plateado', price: 100, images: ['plateado1.jpg', 'plateado2.jpg', 'plateado3.jpg', 'plateado4.jpg'] }
     ]
 };
 
@@ -60,12 +60,15 @@ function displayProducts(model) {
         card.setAttribute('data-aos', 'fade-up');
         card.setAttribute('data-aos-delay', (index * 100).toString());
 
+        // Seleccionamos la primera imagen como la imagen principal de la tarjeta
+        const mainImage = `images/${watch.images[0]}`;
+
         card.innerHTML = `
-            <img src="/api/placeholder/400/400" alt="${model} ${watch.color}" class="product-image">
+            <img src="${mainImage}" alt="${model} ${watch.color}" class="product-image">
             <div class="product-info">
                 <h3>${model} - ${watch.color}</h3>
                 <p class="price">${watch.price} Bs.</p>
-                <button onclick="openModal('${model}', '${watch.color}', ${watch.price})" class="whatsapp-button">
+                <button onclick="openModal('${model}', '${watch.color}', ${watch.price}, ${JSON.stringify(watch.images)})" class="whatsapp-button">
                     Ver Detalles
                 </button>
             </div>
@@ -75,7 +78,7 @@ function displayProducts(model) {
     });
 }
 
-function openModal(model, color, price) {
+function openModal(model, color, price, images) {
     const modal = document.getElementById('productModal');
     const modalImages = modal.querySelector('.modal-images');
     const modalTitle = modal.querySelector('h2');
@@ -91,13 +94,14 @@ function openModal(model, color, price) {
     );
     whatsappButton.href = `https://wa.me/59172645173?text=${message}`;
 
-    // Add images
+    // Add images to the modal
     modalImages.innerHTML = '';
-    for (let i = 1; i <= 4; i++) {
+    images = JSON.parse(images); // Convertir de string a array
+    images.forEach(img => {
         modalImages.innerHTML += `
-            <img src="/api/placeholder/400/400" alt="${model} ${color} - Imagen ${i}" class="modal-image">
+            <img src="images/${img}" alt="${model} ${color}" class="modal-image">
         `;
-    }
+    });
 
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
