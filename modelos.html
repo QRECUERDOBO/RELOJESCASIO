@@ -22,7 +22,7 @@
 
     <!-- Products Grid -->
     <div class="products-grid" id="productsGrid">
-        <!-- Products will be populated by JavaScript -->
+        <!-- Los productos se cargarán dinámicamente con JavaScript -->
     </div>
 
     <!-- Product Modal -->
@@ -30,7 +30,7 @@
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <div class="modal-images">
-                <!-- Images will be populated by JavaScript -->
+                <!-- Las imágenes del producto se insertarán aquí dinámicamente -->
             </div>
             <div class="modal-info">
                 <h2></h2>
@@ -42,7 +42,29 @@
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="script.js"></script>
+
+    <script>
+        // Cerrar el modal cuando se hace clic en el botón de cerrar
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('productModal');
+            const closeButton = document.querySelector('.close-button');
+
+            closeButton.addEventListener('click', () => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            // Cerrar el modal si el usuario hace clic fuera del contenido
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
