@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Watch Data
 const watches = {
     CASIO: [
-        { color: 'Plateado fondo azul', price: 200, images: ['plateadofondoazul1.jpg', 'plateadofondoazul2.jpg', 'plateadofondoazul3.jpg', 'plateadofondoazul4.jpg'] },
+        { color: 'Plateado fondo azul', price: 200, images: ['plateadofondoazul1.jpg', 'plateadofondoazul2.jpg', 'plateadofondoazul3.jpg', 'plateadofondoazul4.PNG'] },
         { color: 'Plateado fondo negro', price: 200, images: ['plateadofondonegro1.jpg', 'plateadofondonegro2.jpg', 'plateadofondonegro3.jpg', 'plateadofondonegro4.jpg'] },
         { color: 'Plateado fondo plata', price: 200, images: ['plateadofondoplata1.jpg', 'plateadofondoplata2.jpg', 'plateadofondoplata3.jpg', 'plateadofondoplata4.jpg'] },
         { color: 'Negro fondo azul', price: 200, images: ['negrofondoazul1.jpg', 'negrofondoazul2.jpg', 'negrofondoazul3.jpg', 'negrofondoazul4.jpg'] },
