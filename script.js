@@ -9,14 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // Watch Data
 const watches = {
     CASIO: [
-        { color: 'Plateado fondo azul', price: 200, images: ['plateadofondoazul1.jpg', 'plateadofondoazul2.jpg', 'plateadofondoazul3.jpg', 'plateadofondoazul4.PNG'] },
-        { color: 'Plateado fondo negro', price: 200, images: ['plateadofondonegro1.jpg', 'plateadofondonegro2.jpg', 'plateadofondonegro3.jpg', 'plateadofondonegro4.jpg'] },
-        { color: 'Negro fondo azul', price: 200, images: ['negrofondoazul1.jpg', 'negrofondoazul2.jpg', 'negrofondoazul3.jpg', 'negrofondoazul4.jpg'] },
-        { color: 'Dorado fondo azul', price: 200, images: ['doradondoazul1.jpg', 'doradondoazul2.jpg', 'doradondoazul3.jpg', 'doradondoazul4.jpg'] }
+        { color: 'Plateado fondo azul', price: 200, images: ['plateadofondoazul1.jpg', 'plateadofondoazul2.jpg', 'plateadofondoazul3.jpg', 'plateadofondoazul4.PNG'], details: 'Regulables, resistente al agua, con fecha.' },
+        { color: 'Plateado fondo negro', price: 200, images: ['plateadofondonegro1.jpg', 'plateadofondonegro2.jpg', 'plateadofondonegro3.jpg', 'plateadofondonegro4.jpg'], details: 'Regulables, resistente al agua, con fecha.' },
+        { color: 'Negro fondo azul', price: 200, images: ['negrofondoazul1.jpg', 'negrofondoazul2.jpg', 'negrofondoazul3.jpg', 'negrofondoazul4.jpg'], details: 'Regulables, resistente al agua, con fecha.' },
+        { color: 'Dorado fondo azul', price: 200, images: ['doradondoazul1.jpg', 'doradondoazul2.jpg', 'doradondoazul3.jpg', 'doradondoazul4.jpg'], details: 'Regulables, resistente al agua, con fecha.' }
     ],
     UNISEX: [
-        { color: 'Dorado', price: 100, images: ['dorado1.jpg', 'dorado2.jpg', 'dorado3.jpg', 'dorado4.jpg'] },
-        { color: 'Negro', price: 100, images: ['negro1.jpg', 'negro2.jpg', 'negro3.jpg', 'negro4.jpg'] }
+        { color: 'Dorado', price: 100, images: ['dorado1.jpg', 'dorado2.jpg', 'dorado3.jpg', 'dorado4.jpg'], details: 'Regulables, resistente al agua.' },
+        { color: 'Negro', price: 100, images: ['negro1.jpg', 'negro2.jpg', 'negro3.jpg', 'negro4.jpg'], details: 'Regulables, resistente al agua.' }
     ]
 };
 
@@ -39,6 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeModal();
             }
         });
+
+        document.getElementById('prevImage').addEventListener('click', prevImage);
+        document.getElementById('nextImage').addEventListener('click', nextImage);
     }
 });
 
@@ -59,7 +62,7 @@ function displayProducts(model) {
             <div class="product-info">
                 <h3>${model} - ${watch.color}</h3>
                 <p class="price">${watch.price} Bs.</p>
-                <button onclick="openModal('${model}', '${watch.color}', ${watch.price}, '${watch.images.join(",")}')" class="whatsapp-button">
+                <button onclick="openModal('${model}', '${watch.color}', ${watch.price}, '${watch.images.join(",")}', '${watch.details}')" class="whatsapp-button">
                     Ver Detalles
                 </button>
             </div>
@@ -69,27 +72,29 @@ function displayProducts(model) {
     });
 }
 
-function openModal(model, color, price, images) {
+let currentImages = [];
+let currentIndex = 0;
+
+function openModal(model, color, price, images, details) {
+    currentImages = images.split(',');
+    currentIndex = 0;
+
     const modal = document.getElementById('productModal');
-    const modalImages = modal.querySelector('.modal-images');
+    const modalImage = document.getElementById('modalImage');
     const modalTitle = modal.querySelector('h2');
     const modalPrice = modal.querySelector('.price');
+    const modalDetails = modal.querySelector('.details');
     const whatsappButton = modal.querySelector('.whatsapp-button');
 
     modalTitle.textContent = `${model} - ${color}`;
     modalPrice.textContent = `${price} Bs.`;
+    modalDetails.textContent = `Características: ${details}`;
+
+    modalImage.src = currentImages[currentIndex];
 
     // Mensaje para WhatsApp
     const message = encodeURIComponent(`Me gusta este modelo y color "${model} - ${color}" ¿Cómo puedo adquirirlo?`);
     whatsappButton.href = `https://wa.me/59172645173?text=${message}`;
-
-    // Agregar imágenes al modal
-    modalImages.innerHTML = '';
-    images.split(',').forEach(img => {
-        modalImages.innerHTML += `
-            <img src="${img}" alt="${model} ${color}" class="modal-image" onerror="this.src='placeholder.jpg'">
-        `;
-    });
 
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
@@ -99,4 +104,14 @@ function closeModal() {
     const modal = document.getElementById('productModal');
     modal.style.display = 'none';
     document.body.style.overflow = 'auto';
+}
+
+function prevImage() {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : currentImages.length - 1;
+    document.getElementById('modalImage').src = currentImages[currentIndex];
+}
+
+function nextImage() {
+    currentIndex = (currentIndex < currentImages.length - 1) ? currentIndex + 1 : 0;
+    document.getElementById('modalImage').src = currentImages[currentIndex];
 }
