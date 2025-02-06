@@ -11,6 +11,15 @@ body {
     color: #fff;
 }
 
+/* Ajuste para que los videos no tengan zoom */
+.image-container video {
+    width: 100%;
+    max-width: 250px; /* Ajuste del tamaño del video */
+    height: auto;
+    object-fit: cover;
+}
+
+
 /* Hero Section */
 .hero {
     height: 100vh;
