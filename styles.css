@@ -11,6 +11,28 @@ body {
     color: #fff;
 }
 
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(45deg, #00f, #f0f);
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+}
+
+
 /* Ajuste para que los videos no tengan zoom */
 .image-container video {
     width: 100%;
