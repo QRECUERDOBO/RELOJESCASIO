@@ -215,15 +215,13 @@ body {
 }
 
 /* Modal Images */
-.modal-images {
-    position: relative;
+.modal-image {
     width: 100%;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    height: auto;
+    max-height: 300px; /* Ajusta esto según sea necesario */
+    object-fit: contain; /* Cambia 'cover' por 'contain' */
 }
+
 
 /* Modal Navigation */
 .carousel-button {
