@@ -11,6 +11,7 @@ body {
     color: #fff;
 }
 
+/* Botón CTA */
 .cta-button {
     display: inline-block;
     padding: 1rem 2.5rem;
@@ -32,11 +33,10 @@ body {
     box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
 }
 
-
 /* Ajuste para que los videos no tengan zoom */
 .image-container video {
     width: 100%;
-    max-width: 250px; /* Ajuste del tamaño del video */
+    max-width: 250px;
     height: auto;
     object-fit: cover;
 }
@@ -53,16 +53,7 @@ body {
     overflow: hidden;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, #00f, #f0f);
-    animation: gradient 15s ease infinite;
-    opacity: 0.1;
-}
-
+/* Hero Content */
 .hero-content {
     position: relative;
     z-index: 1;
@@ -82,6 +73,7 @@ body {
     color: #fff;
 }
 
+/* Hero Images */
 .hero-images {
     display: flex;
     justify-content: center;
@@ -103,6 +95,7 @@ body {
     object-fit: cover;
 }
 
+/* Floating Animations */
 .floating {
     animation: float 3s ease-in-out infinite;
 }
@@ -140,14 +133,18 @@ body {
     background: linear-gradient(45deg, #000, #1a1a1a);
 }
 
+/* Model Selection */
 .model-selector {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
     gap: 1rem;
     padding: 2rem;
+    justify-items: center;
 }
 
 .model-button {
+    width: 100%;
+    max-width: 200px;
     padding: 1rem 2rem;
     border: none;
     border-radius: 25px;
@@ -155,6 +152,7 @@ body {
     color: white;
     cursor: pointer;
     transition: transform 0.3s;
+    text-align: center;
 }
 
 .model-button.active {
@@ -162,6 +160,7 @@ body {
     transform: scale(1.1);
 }
 
+/* Products Grid */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -204,6 +203,7 @@ body {
     align-items: center;
 }
 
+/* Modal Content */
 .modal-content {
     position: relative;
     width: 90%;
@@ -214,7 +214,7 @@ body {
     text-align: center;
 }
 
-/* Carrusel de imágenes en el modal */
+/* Modal Images */
 .modal-images {
     position: relative;
     width: 100%;
@@ -225,6 +225,7 @@ body {
     overflow: hidden;
 }
 
+/* Modal Navigation */
 .carousel-button {
     position: absolute;
     background: rgba(255,255,255,0.3);
@@ -246,12 +247,6 @@ body {
 
 #nextImage {
     right: 10px;
-}
-
-.modal-image {
-    width: 100%;
-    height: auto;
-    max-height: 300px;
 }
 
 /* Modal Info */
@@ -304,16 +299,16 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-/* Responsive Design */
+/* Responsive Ajustes */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 3rem;
+    .model-selector {
+        grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .hero-images {
         flex-wrap: wrap;
     }
-    
+
     .image-container {
         width: 150px;
         height: 150px;
