@@ -15,7 +15,8 @@ const watches = {
         { color: 'Dorado fondo azul', price: 200, images: ['doradondoazul1.jpg', 'doradondoazul2.jpg', 'doradondoazul3.jpg', 'doradondoazul4.jpg'], details: 'Regulables, resistente al agua, con fecha.' },
         { color: 'Plateado fondo blanco', price: 200, images: ['plateadofondoblanco1.jpg', 'plateadofondoblanco2.jpg', 'plateadofondoblanco3.jpg', 'plateadofondoblanco4.jpg'], details: 'Regulables, resistente al agua, con fecha.' },
         { color: 'Dorado fondo dorado', price: 200, images: ['doradofondodorado1.jpg', 'doradofondodorado2.jpg', 'doradofondodorado3.jpg', 'doradofondodorado4.jpg'], details: 'Regulables, resistente al agua, con fecha.' }
-    UNISEX: [
+], 
+   UNISEX: [
         { color: 'Dorado', price: 100, images: ['dorado1.jpg', 'dorado2.jpg', 'dorado3.jpg', 'dorado4.jpg'], details: 'Regulables, resistente al agua.' },
         { color: 'Negro', price: 100, images: ['negro1.jpg', 'negro2.jpg', 'negro3.jpg', 'negro4.jpg'], details: 'Regulables, resistente al agua.' },
         { color: 'Plateado', price: 100, images: ['plateado1.jpg', 'plateado2.jpg', 'plateado3.jpg', 'plateado4.jpg'], details: 'Regulables, resistente al agua.' }
