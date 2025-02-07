@@ -15,11 +15,21 @@ const watches = {
         { color: 'Dorado fondo azul', price: 200, images: ['doradondoazul1.jpg', 'doradondoazul2.jpg', 'doradondoazul3.jpg', 'doradondoazul4.jpg'], details: 'Regulables, resistente al agua, con fecha.' },
         { color: 'Plateado fondo blanco', price: 200, images: ['plateadofondoblanco1.jpg', 'plateadofondoblanco2.jpg', 'plateadofondoblanco3.jpg', 'plateadofondoblanco4.jpg'], details: 'Regulables, resistente al agua, con fecha.' },
         { color: 'Dorado fondo dorado', price: 200, images: ['doradofondodorado1.jpg', 'doradofondodorado2.jpg', 'doradofondodorado3.jpg', 'doradofondodorado4.jpg'], details: 'Regulables, resistente al agua, con fecha.' }
-], 
-   UNISEX: [
+    ], 
+    UNISEX: [
         { color: 'Dorado', price: 100, images: ['dorado1.jpg', 'dorado2.jpg', 'dorado3.jpg', 'dorado4.jpg'], details: 'Regulables, resistente al agua.' },
         { color: 'Negro', price: 100, images: ['negro1.jpg', 'negro2.jpg', 'negro3.jpg', 'negro4.jpg'], details: 'Regulables, resistente al agua.' },
         { color: 'Plateado', price: 100, images: ['plateado1.jpg', 'plateado2.jpg', 'plateado3.jpg', 'plateado4.jpg'], details: 'Regulables, resistente al agua.' }
+    ],
+    "CASIO REDONDO": [
+        { color: 'Negro', price: 200, images: ['casio_redondo_negro1.jpg', 'casio_redondo_negro2.jpg'], details: 'Regulables, resistente al agua.' },
+        { color: 'Dorado', price: 200, images: ['casio_redondo_dorado1.jpg', 'casio_redondo_dorado2.jpg'], details: 'Regulables, resistente al agua.' }
+    ],
+    "CASIO NUEVO": [
+        { color: 'Plateado', price: 200, images: ['casio_nuevo_plateado1.jpg', 'casio_nuevo_plateado2.jpg'], details: 'Regulable, resistente al agua.' }
+    ],
+    "RELOJ OFERTA": [
+        { color: 'Oferta Especial', price: 50, images: ['reloj_oferta1.jpg', 'reloj_oferta2.jpg'], details: 'Reloj oferta, precio 50bs. 3 en 120bs.' }
     ]
 };
 
@@ -58,7 +68,7 @@ function displayProducts(model) {
         card.setAttribute('data-aos', 'fade-up');
         card.setAttribute('data-aos-delay', (index * 100).toString());
 
-        const mainImage = watch.images[0]; // Primera imagen del array
+        const mainImage = watch.images[0];
 
         card.innerHTML = `
             <img src="${mainImage}" alt="${model} ${watch.color}" class="product-image" onerror="this.src='placeholder.jpg'">
