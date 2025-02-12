@@ -22,7 +22,7 @@ const watches = {
         { color: 'Dorado', price: 100, images: ['dorado1.jpg', 'dorado2.jpg', 'dorado3.jpg', 'dorado4.jpg'], details: 'Regulables, resistente al agua.' },
         { color: 'Negro', price: 100, images: ['negro1.jpg', 'negro2.jpg', 'negro3.jpg', 'negro4.jpg'], details: 'Regulables, resistente al agua.' },
         { color: 'Plateado', price: 100, images: ['plateado1.jpg', 'plateado2.jpg', 'plateado3.jpg', 'plateado4.jpg'], details: 'Regulables, resistente al agua.' },
-        { color: 'Rosado', price: 100, images: ['rosado1.jpg', 'rosado2.jpg', 'rosado3.jpg', 'rosado4.jpg'], details: 'Regulables, resistente al agua.' }
+        { color: 'Rosa Gold', price: 100, images: ['rosado1.jpg', 'rosado2.jpg', 'rosado3.jpg', 'rosado4.jpg'], details: 'Regulables, resistente al agua.' }
     ],
     "CASIO REDONDO": [
         { color: 'Negro', price: 200, images: ['casio_redondo_negro1.jpg', 'casio_redondo_negro2.jpg'], details: 'Regulables, resistente al agua.' },
