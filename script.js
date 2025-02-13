@@ -112,26 +112,37 @@ function openModal(model, color, price, images, details) {
     const whatsappButton = modal.querySelector('.whatsapp-button');
 
     modalTitle.textContent = `${model} - ${color}`;
-    
-    // Si es la opción "RELOJ OFERTA 50BS 'WOMEN'", personalizamos los detalles
+
+    // Si es "RELOJ OFERTA 50BS 'WOMEN'", mostrar detalles personalizados
     if (model === "RELOJ OFERTA 50BS 'WOMEN'") {
         modalPrice.innerHTML = `<strong>Precio:</strong> 50 Bs.<br><strong>Promoción:</strong> 2 x 90 Bs.`;
+        modalDetails.textContent = "Reloj oferta especial. Aprovecha la promoción.";
+
+        // Ocultar botones de navegación para este modelo
+        document.getElementById('prevImage').style.display = 'none';
+        document.getElementById('nextImage').style.display = 'none';
     } else {
         modalPrice.textContent = `${price} Bs.`;
-    }
-    
-    modalDetails.textContent = `Características: ${details}`;
-    
-    // Mostrar solo la primera imagen si es "RELOJ OFERTA 50BS 'WOMEN'"
-    modalImage.src = currentImages[0];
+        modalDetails.textContent = `Características: ${details}`;
 
-    // Mensaje personalizado para WhatsApp
+        // Mostrar botones de navegación para otros modelos
+        document.getElementById('prevImage').style.display = 'block';
+        document.getElementById('nextImage').style.display = 'block';
+    }
+
+    // Asegurar que la primera imagen se carga correctamente
+    modalImage.src = currentImages[0];
+    modalImage.onerror = () => { modalImage.src = 'placeholder.jpg'; }; // Evita imágenes rotas
+
+    // Configurar botón de WhatsApp con mensaje específico
     const message = encodeURIComponent(`Me interesa el modelo "RELOJ OFERTA 50BS WOMEN". ¿Cómo puedo adquirirlo?`);
     whatsappButton.href = `https://wa.me/59172645173?text=${message}`;
 
+    // Mostrar modal
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
 }
+
 
 
 function closeModal() {
