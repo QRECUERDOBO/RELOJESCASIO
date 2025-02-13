@@ -34,9 +34,15 @@ const watches = {
     "CASIO NUEVO": [
         { color: 'Plateado', price: 250, images: ['casio_nuevo_plateado1.jpg', 'casio_nuevo_plateado2.jpg'], details: 'Regulable, resistente al agua.' }
     ],
-    "RELOJ OFERTA 50BS 'WOMEN'": [
-        { color: 'Oferta Especial', price: 50, images: ['reloj_oferta1.jpg', 'reloj_oferta2.jpg'], details: 'Reloj oferta, precio 50bs. 3 en 120bs.' }
-    ]
+   "RELOJ OFERTA 50BS 'WOMEN'": [
+    { 
+        color: 'Oferta Especial', 
+        price: 50, 
+        images: ['reloj1.jpg', 'reloj2.jpg', 'reloj3.jpg', 'reloj25.jpg', 'reloj6.jpg', 'reloj7.jpg', 'reloj8.jpg', 'reloj9.jpg', 'reloj10.jpg'], 
+        details: 'Reloj oferta, precio 50bs. Promoción 2 x 90bs.' 
+    }
+]
+
 };
 
 // Verifica si estamos en la página de modelos
@@ -106,18 +112,27 @@ function openModal(model, color, price, images, details) {
     const whatsappButton = modal.querySelector('.whatsapp-button');
 
     modalTitle.textContent = `${model} - ${color}`;
-    modalPrice.textContent = `${price} Bs.`;
+    
+    // Si es la opción "RELOJ OFERTA 50BS 'WOMEN'", personalizamos los detalles
+    if (model === "RELOJ OFERTA 50BS 'WOMEN'") {
+        modalPrice.innerHTML = `<strong>Precio:</strong> 50 Bs.<br><strong>Promoción:</strong> 2 x 90 Bs.`;
+    } else {
+        modalPrice.textContent = `${price} Bs.`;
+    }
+    
     modalDetails.textContent = `Características: ${details}`;
+    
+    // Mostrar solo la primera imagen si es "RELOJ OFERTA 50BS 'WOMEN'"
+    modalImage.src = currentImages[0];
 
-    modalImage.src = currentImages[currentIndex];
-
-    // Mensaje para WhatsApp
-    const message = encodeURIComponent(`Me gusta este modelo y color "${model} - ${color}" ¿Cómo puedo adquirirlo?`);
+    // Mensaje personalizado para WhatsApp
+    const message = encodeURIComponent(`Me interesa el modelo "RELOJ OFERTA 50BS WOMEN". ¿Cómo puedo adquirirlo?`);
     whatsappButton.href = `https://wa.me/59172645173?text=${message}`;
 
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
 }
+
 
 function closeModal() {
     const modal = document.getElementById('productModal');
