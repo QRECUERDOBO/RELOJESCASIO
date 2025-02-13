@@ -34,17 +34,22 @@ const watches = {
     "CASIO NUEVO": [
         { color: 'Plateado', price: 250, images: ['casio_nuevo_plateado1.jpg', 'casio_nuevo_plateado2.jpg'], details: 'Regulable, resistente al agua.' }
     ],
-   "RELOJ OFERTA 50BS 'WOMEN'": [
-    { 
-        color: '', 
-        price: 50, 
-        images: [
-            'reloj1.jpg', 'reloj2.jpg', 'reloj3.jpg', 'reloj4.jpg', 'reloj5.jpg',
-            'reloj6.jpg', 'reloj7.jpg', 'reloj8.jpg', 'reloj9.jpg', 'reloj10.jpg',
-            'reloj11.jpg', 'reloj12.jpg', 'reloj13.jpg', 'reloj14.jpg', 'reloj15.jpg'
-        ], 
-        details: 'Oferta precio 50bs  2 x 90bs.' 
-    }
+"RELOJ OFERTA 50BS 'WOMEN'": [
+    { color: 'Oferta precio 50', price: 50, images: ['reloj1.jpg'], details: 'Precio 50 Bs. Oferta 2 x 90 Bs.' },
+    { color: 'Oferta precio 50', price: 50, images: ['reloj2.jpg'], details: 'Precio 50 Bs. Oferta 2 x 90 Bs.' },
+    { color: 'Oferta precio 50', price: 50, images: ['reloj3.jpg'], details: 'Precio 50 Bs. Oferta 2 x 90 Bs.' },
+    { color: 'Oferta precio 50', price: 50, images: ['reloj4.jpg'], details: 'Precio 50 Bs. Oferta 2 x 90 Bs.' },
+    { color: 'Oferta precio 50', price: 50, images: ['reloj5.jpg'], details: 'Precio 50 Bs. Oferta 2 x 90 Bs.' },
+    { color: 'Oferta precio 50', price: 50, images: ['reloj6.jpg'], details: 'Precio 50 Bs. Oferta 2 x 90 Bs.' },
+    { color: 'Oferta precio 50', price: 50, images: ['reloj7.jpg'], details: 'Precio 50 Bs. Oferta 2 x 90 Bs.' },
+    { color: 'Oferta precio 50', price: 50, images: ['reloj8.jpg'], details: 'Precio 50 Bs. Oferta 2 x 90 Bs.' },
+    { color: 'Oferta precio 50', price: 50, images: ['reloj9.jpg'], details: 'Precio 50 Bs. Oferta 2 x 90 Bs.' },
+    { color: 'Oferta precio 50', price: 50, images: ['reloj10.jpg'], details: 'Precio 50 Bs. Oferta 2 x 90 Bs.' },
+    { color: 'Oferta precio 50', price: 50, images: ['reloj11.jpg'], details: 'Precio 50 Bs. Oferta 2 x 90 Bs.' },
+    { color: 'Oferta precio 50', price: 50, images: ['reloj12.jpg'], details: 'Precio 50 Bs. Oferta 2 x 90 Bs.' },
+    { color: 'Oferta precio 50', price: 50, images: ['reloj13.jpg'], details: 'Precio 50 Bs. Oferta 2 x 90 Bs.' },
+    { color: 'Oferta precio 50', price: 50, images: ['reloj14.jpg'], details: 'Precio 50 Bs. Oferta 2 x 90 Bs.' },
+    { color: 'Oferta precio 50', price: 50, images: ['reloj15.jpg'], details: 'Precio 50 Bs. Oferta 2 x 90 Bs.' }
 ]
 };
 
