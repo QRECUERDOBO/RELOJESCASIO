@@ -36,13 +36,16 @@ const watches = {
     ],
    "RELOJ OFERTA 50BS 'WOMEN'": [
     { 
-        color: 'Oferta Especial', 
+        color: '', 
         price: 50, 
-        images: ['reloj1.jpg', 'reloj2.jpg', 'reloj3.jpg', 'reloj25.jpg', 'reloj6.jpg', 'reloj7.jpg', 'reloj8.jpg', 'reloj9.jpg', 'reloj10.jpg', 'reloj11.jpg', 'reloj12.jpg', 'reloj13.jpg', 'reloj14.jpg', 'reloj15.jpg'], 
-        details: 'Reloj oferta, precio 50bs. Promoción 2 x 90bs.' 
+        images: [
+            'reloj1.jpg', 'reloj2.jpg', 'reloj3.jpg', 'reloj4.jpg', 'reloj5.jpg',
+            'reloj6.jpg', 'reloj7.jpg', 'reloj8.jpg', 'reloj9.jpg', 'reloj10.jpg',
+            'reloj11.jpg', 'reloj12.jpg', 'reloj13.jpg', 'reloj14.jpg', 'reloj15.jpg'
+        ], 
+        details: 'Oferta precio 50bs  2 x 90bs.' 
     }
 ]
-
 };
 
 // Verifica si estamos en la página de modelos
@@ -112,38 +115,18 @@ function openModal(model, color, price, images, details) {
     const whatsappButton = modal.querySelector('.whatsapp-button');
 
     modalTitle.textContent = `${model} - ${color}`;
+    modalPrice.textContent = `${price} Bs.`;
+    modalDetails.textContent = `Características: ${details}`;
 
-    // Si es "RELOJ OFERTA 50BS 'WOMEN'", mostrar detalles personalizados
-    if (model === "RELOJ OFERTA 50BS 'WOMEN'") {
-        modalPrice.innerHTML = `<strong>Precio:</strong> 50 Bs.<br><strong>Promoción:</strong> 2 x 90 Bs.`;
-        modalDetails.textContent = "Reloj oferta especial. Aprovecha la promoción.";
+    modalImage.src = currentImages[currentIndex];
 
-        // Ocultar botones de navegación para este modelo
-        document.getElementById('prevImage').style.display = 'none';
-        document.getElementById('nextImage').style.display = 'none';
-    } else {
-        modalPrice.textContent = `${price} Bs.`;
-        modalDetails.textContent = `Características: ${details}`;
-
-        // Mostrar botones de navegación para otros modelos
-        document.getElementById('prevImage').style.display = 'block';
-        document.getElementById('nextImage').style.display = 'block';
-    }
-
-    // Asegurar que la primera imagen se carga correctamente
-    modalImage.src = currentImages[0];
-    modalImage.onerror = () => { modalImage.src = 'placeholder.jpg'; }; // Evita imágenes rotas
-
-    // Configurar botón de WhatsApp con mensaje específico
-    const message = encodeURIComponent(`Me interesa el modelo "RELOJ OFERTA 50BS WOMEN". ¿Cómo puedo adquirirlo?`);
+    // Mensaje para WhatsApp
+    const message = encodeURIComponent(`Me gusta este modelo y color "${model} - ${color}" ¿Cómo puedo adquirirlo?`);
     whatsappButton.href = `https://wa.me/59172645173?text=${message}`;
 
-    // Mostrar modal
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
 }
-
-
 
 function closeModal() {
     const modal = document.getElementById('productModal');
