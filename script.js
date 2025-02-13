@@ -38,7 +38,7 @@ const watches = {
     { 
         color: 'Oferta Especial', 
         price: 50, 
-        images: ['reloj1.jpg', 'reloj2.jpg', 'reloj3.jpg', 'reloj25.jpg', 'reloj6.jpg', 'reloj7.jpg', 'reloj8.jpg', 'reloj9.jpg', 'reloj10.jpg'], 
+        images: ['reloj1.jpg', 'reloj2.jpg', 'reloj3.jpg', 'reloj25.jpg', 'reloj6.jpg', 'reloj7.jpg', 'reloj8.jpg', 'reloj9.jpg', 'reloj10.jpg', 'reloj11.jpg', 'reloj12.jpg', 'reloj13.jpg', 'reloj14.jpg', 'reloj15.jpg'], 
         details: 'Reloj oferta, precio 50bs. Promoción 2 x 90bs.' 
     }
 ]
