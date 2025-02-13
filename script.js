@@ -9,14 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // Watch Data
 const watches = {
     CASIO: [
-        { color: 'Casio Plateado → Azul', price: 200, images: ['plateadofondoazul1.jpg', 'plateadofondoazul2.jpg', 'plateadofondoazul3.jpg', 'plateadofondoazul4.PNG'], details: 'Regulables, resistente al agua, con fecha, Acero inoxidable.' },
-        { color: 'Casio Plateado → Negro', price: 200, images: ['plateadofondonegro1.jpg', 'plateadofondonegro2.jpg', 'plateadofondonegro3.jpg', 'plateadofondonegro4.jpg'], details: 'Regulables, resistente al agua, con fecha, Acero inoxidable.' },
-        { color: 'Casio Negro → Azul', price: 200, images: ['negrofondoazul1.jpg', 'negrofondoazul2.jpg', 'negrofondoazul3.jpg', 'negrofondoazul4.jpg'], details: 'Regulables, resistente al agua, con fecha, Acero inoxidable.' },
-        { color: 'Casio Plateado → Celeste', price: 200, images: ['plateadofondoceleste1.jpg', 'plateadofondoceleste2.jpg', 'plateadofondoceleste3.jpg', 'plateadofondoceleste4.jpg'], details: 'Regulables, resistente al agua, con fecha, Acero inoxidable.' },
-        { color: 'Casio Plateado → Blanco', price: 200, images: ['plateadofondoblanco1.jpg', 'plateadofondoblanco2.jpg', 'plateadofondoblanco3.jpg', 'plateadofondoblanco4.jpg'], details: 'Regulables, resistente al agua, con fecha, Acero inoxidable.' },
-        { color: 'Casio Plateado → Calipso', price: 200, images: ['plateadofondocalipso1.jpg', 'plateadofondocalipso2.jpg', 'plateadofondocalipso3.jpg', 'plateadofondocalipso4.jpg'], details: 'Regulables, resistente al agua, con fecha, Acero inoxidable.' },
-        { color: 'Casio Dorado → Dorado', price: 200, images: ['doradofondodorado1.jpg', 'doradofondodorado2.jpg', 'doradofondodorado3.jpg', 'doradofondodorado4.jpg'], details: 'Regulables, resistente al agua, con fecha, Acero inoxidable.' },
-         { color: 'Casio Negro → Negro', price: 200, images: ['negrofondonegro1.jpg', 'negrofondonegro2.jpg', 'negrofondonegro3.jpg', 'negrofondonegro4.jpg'], details: 'Regulables, resistente al agua, con fecha, Acero inoxidable.' }
+        { color: 'Plateado → Azul', price: 200, images: ['plateadofondoazul1.jpg', 'plateadofondoazul2.jpg', 'plateadofondoazul3.jpg', 'plateadofondoazul4.PNG'], details: 'Regulables, resistente al agua, con fecha, Acero inoxidable.' },
+        { color: 'Plateado → Negro', price: 200, images: ['plateadofondonegro1.jpg', 'plateadofondonegro2.jpg', 'plateadofondonegro3.jpg', 'plateadofondonegro4.jpg'], details: 'Regulables, resistente al agua, con fecha, Acero inoxidable.' },
+        { color: 'Negro → Azul', price: 200, images: ['negrofondoazul1.jpg', 'negrofondoazul2.jpg', 'negrofondoazul3.jpg', 'negrofondoazul4.jpg'], details: 'Regulables, resistente al agua, con fecha, Acero inoxidable.' },
+        { color: 'Plateado → Celeste', price: 200, images: ['plateadofondoceleste1.jpg', 'plateadofondoceleste2.jpg', 'plateadofondoceleste3.jpg', 'plateadofondoceleste4.jpg'], details: 'Regulables, resistente al agua, con fecha, Acero inoxidable.' },
+        { color: 'Plateado → Blanco', price: 200, images: ['plateadofondoblanco1.jpg', 'plateadofondoblanco2.jpg', 'plateadofondoblanco3.jpg', 'plateadofondoblanco4.jpg'], details: 'Regulables, resistente al agua, con fecha, Acero inoxidable.' },
+        { color: 'Plateado → Calipso', price: 200, images: ['plateadofondocalipso1.jpg', 'plateadofondocalipso2.jpg', 'plateadofondocalipso3.jpg', 'plateadofondocalipso4.jpg'], details: 'Regulables, resistente al agua, con fecha, Acero inoxidable.' },
+        { color: 'Dorado → Dorado', price: 200, images: ['doradofondodorado1.jpg', 'doradofondodorado2.jpg', 'doradofondodorado3.jpg', 'doradofondodorado4.jpg'], details: 'Regulables, resistente al agua, con fecha, Acero inoxidable.' },
+         { color: 'Negro → Negro', price: 200, images: ['negrofondonegro1.jpg', 'negrofondonegro2.jpg', 'negrofondonegro3.jpg', 'negrofondonegro4.jpg'], details: 'Regulables, resistente al agua, con fecha, Acero inoxidable.' }
   
     ], 
     UNISEX: [
@@ -26,10 +26,10 @@ const watches = {
         { color: 'Rosa Gold', price: 100, images: ['rosado1.jpg', 'rosado2.jpg', 'rosado3.jpg', 'rosado4.jpg'], details: 'Regulables, resistente al agua, Acero inoxidable.' }
     ],
     "CASIO REDONDO": [
-        { color: 'Casop Negro → Negro ', price: 250, images: ['casio_redondo_negro1.jpg', 'casio_redondo_negro2.jpg', 'casio_redondo_negro3.jpg', 'casio_redondo_negro4.jpg'], details: 'Regulables, resistente al agua.' },
-        { color: 'Casio Dorado → Dorado', price: 250, images: ['casio_redondo_dorado1.jpg', 'casio_redondo_dorado2.jpg', 'casio_redondo_dorado3.jpg', 'casio_redondo_dorado4.jpg'], details: 'Regulables, resistente al agua.' },
-        { color: 'Casio Dorado → Negro', price: 250, images: ['casio_redondo_doradonegro1.jpg', 'casio_redondo_doradonegro2.jpg', 'casio_redondo_doradonegro3.jpg', 'casio_redondo_doradonegro4.jpg'], details: 'Regulables, resistente al agua.' },
-        { color: 'Casio Plateado → Blanco', price: 250, images: ['casio_redondo_plateado1.jpg', 'casio_redondo_plateado2.jpg', 'casio_redondo_plateado3.jpg', 'casio_redondo_plateado4.jpg'], details: 'Regulables, resistente al agua.' }
+        { color: 'Negro → Negro ', price: 250, images: ['casio_redondo_negro1.jpg', 'casio_redondo_negro2.jpg', 'casio_redondo_negro3.jpg', 'casio_redondo_negro4.jpg'], details: 'Regulables, resistente al agua.' },
+        { color: 'Dorado → Dorado', price: 250, images: ['casio_redondo_dorado1.jpg', 'casio_redondo_dorado2.jpg', 'casio_redondo_dorado3.jpg', 'casio_redondo_dorado4.jpg'], details: 'Regulables, resistente al agua.' },
+        { color: 'Dorado → Negro', price: 250, images: ['casio_redondo_doradonegro1.jpg', 'casio_redondo_doradonegro2.jpg', 'casio_redondo_doradonegro3.jpg', 'casio_redondo_doradonegro4.jpg'], details: 'Regulables, resistente al agua.' },
+        { color: 'Plateado → Blanco', price: 250, images: ['casio_redondo_plateado1.jpg', 'casio_redondo_plateado2.jpg', 'casio_redondo_plateado3.jpg', 'casio_redondo_plateado4.jpg'], details: 'Regulables, resistente al agua.' }
     ],
     "CASIO NUEVO": [
         { color: 'Plateado', price: 250, images: ['casio_nuevo_plateado1.jpg', 'casio_nuevo_plateado2.jpg'], details: 'Regulable, resistente al agua.' }
