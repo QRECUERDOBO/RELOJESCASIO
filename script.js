@@ -34,7 +34,7 @@ const watches = {
     "CASIO NUEVO": [
         { color: 'Plateado', price: 250, images: ['casio_nuevo_plateado1.jpg', 'casio_nuevo_plateado2.jpg'], details: 'Regulable, resistente al agua.' }
     ],
-"RELOJ OFERTA 50BS 'WOMEN'": [
+"RELOJ_OFERTA_WOMEN": [
     { color: 'Oferta precio 50', price: 50, images: ['reloj1.jpg'], details: 'Precio 50 Bs. Oferta 2 x 90 Bs.' },
     { color: 'Oferta precio 50', price: 50, images: ['reloj2.jpg'], details: 'Precio 50 Bs. Oferta 2 x 90 Bs.' },
     { color: 'Oferta precio 50', price: 50, images: ['reloj3.jpg'], details: 'Precio 50 Bs. Oferta 2 x 90 Bs.' },
